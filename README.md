@@ -6,13 +6,13 @@ Robô seguidor de linha que percorre a pista através da leitura da linha e veri
 
 ## Materiais
 
-1x Sensor HCSR-04
-2x Motor DC 3V A 6V
-1x Arduino UNO R3 Paralelo
-1x Ponte G L298 Bridge
-1x CHASSI
-2x Rodas c/ 1x Roda Boba
-2x Sensores TCRT 5000
+- 1x Sensor HCSR-04
+- 2x Motor DC 3V A 6V
+- 1x Arduino UNO R3 Paralelo
+- 1x Ponte G L298 Bridge
+- 1x CHASSI
+- 2x Rodas c/ 1x Roda Boba
+- 2x Sensores TCRT 5000
 
 ## Colaboradores
 
