@@ -24,24 +24,12 @@ void setup(){
 
 void loop(){
    //sensor HCSR-04
-   //distancia = getUltrassonicDistance(); 
+   distancia = getUltrassonicDistance(); 
   
    //Motor DC
    //motor A = preto e branco
    //motor B = verde e cinza
-   
-   //Gira o Motor A no sentido horario
-   digitalWrite(IN1, HIGH);
-   delay(2000);
-   digitalWrite(IN2, LOW);
-   
-   
-   //Gira o Motor B no sentido horario
-   digitalWrite(IN3, HIGH);
-   delay(2000);
-   digitalWrite(IN4, LOW);
 
- 
 }
 
 //Sensor HCSR-04 código
@@ -57,8 +45,33 @@ float getUltrassonicDistance(){
   Serial.begin(9600);
   Serial.print("Distancia em cm: ");
   Serial.println(distancia);
-  delay(500);
-
+  delay(200);
+    
+    if (distancyInCentimeters <= 20) {// Se a distância lida pelo sensor for menor ou igual que 40 centimetros
+ 
+         // Motor lado esquerdo parado
+         digitalWrite(IN1, LOW);
+         digitalWrite(IN2, LOW);
+         
+         // Motor lado direito parado
+         digitalWrite(IN3, LOW);
+         digitalWrite(IN4, LOW);
+         
+         }
+     else {// Se não, ou seja, se a distância for maior que 20 centimetros
+          
+            //Gira o Motor A no sentido horario
+           digitalWrite(IN1, HIGH);
+           delay(2000);
+           digitalWrite(IN2, LOW);
+           
+           
+           //Gira o Motor B no sentido horario
+           digitalWrite(IN3, LOW);
+           delay(2000);
+           digitalWrite(IN4, HIGH);
+     }
+    
   return distancyInCentimeters;
 }
 
