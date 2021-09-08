@@ -1,6 +1,6 @@
 //HRSR04 sensor
-const byte HRSR04_trig_pin = 7;
-const byte HRSR04_echo_pin = 6;
+#define HRSR04_trig_pin 7
+#define HRSR04_echo_pin 6
 float distancy;
 
 //Motor DC
@@ -56,7 +56,8 @@ void setup()
   Serial.begin(9600);
 }
 
-void loop() {
+void loop()
+{
   distancy = getUltrassonicDistance();
 
   //Motor DC
@@ -64,8 +65,8 @@ void loop() {
   //motor B = verde e cinza
 
   //Neste processo armazenamos o valor lido pelo sensor na variável que armazena tais dados.
-  Sensor1 = digitalRead(pin_S1);
-  Sensor2 = digitalRead(pin_S2);
+  Sensor1 = hasLight(pin_S1);
+  Sensor2 = hasLight(pin_S2);
 
   Serial.print("Distancia em cm: ");
   Serial.println(distancy);
@@ -106,7 +107,8 @@ void loop() {
   }
 }
 
-float getUltrassonicDistance() {
+float getUltrassonicDistance()
+{
   digitalWrite(HRSR04_trig_pin, LOW);
   delayMicroseconds(2);
   digitalWrite(HRSR04_trig_pin, HIGH);
@@ -119,6 +121,7 @@ float getUltrassonicDistance() {
   return distancyInCentimeters;
 }
 
-bool hasLight() {
-  return (digitalRead(pinoSensor) == 1);
+bool hasLight(byte pin)
+{
+  return (digitalRead(pin) == 0);
 }
