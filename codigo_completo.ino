@@ -9,10 +9,6 @@ int IN2 = 4; //cinza
 int IN3 = 3; //azul
 int IN4 = 2; //amarelo
 
-//TCRT5000 sensor
-int pinoLed = 12;
-int pinoSensor = 8;
-
 //Definição dos pinos de controle do motor
 #define IN2 4 // Pino_Velocidade 1º Motor ( 0 a 255)_ Porta ATV_A ponte H;
 #define IN4 2 //Pino_Velocidade 2º Motor ( 0 a 255) _ Porta ATV_B ponte H;
