@@ -78,3 +78,7 @@ float getUltrassonicDistance()
 
   return distancyInCentimeters;
 }
+
+bool hasLight(){
+  return (digitalRead(pinoSensor) == 1);
+}
