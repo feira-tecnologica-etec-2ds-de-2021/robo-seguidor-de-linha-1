@@ -70,6 +70,11 @@ void loop()
 
   Serial.print("Distancia em cm: ");
   Serial.println(distancy);
+  Serial.print("sensor esquerdo ligado? - ");
+  Serial.println(Sensor1);
+  Serial.print("sensor direito ligado? - ");
+  Serial.println(Sensor2);
+
   delay(200);
 
   if (distancy <= 20)
